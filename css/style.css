@@ -1,0 +1,286 @@
+/* Micro reset */
+*,*:before,*:after{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;margin:0;padding:0;}
+html, body { height: 100%; width: 100%; font-family: Helvetica, Arial, sans-serif; }
+
+* {
+    line-height: normal !important;
+}
+
+html { 
+  background: url(/img/bg.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+body {
+    /* Without this, the body has excess horizontal scroll when the menu is open */
+  overflow-x: hidden;
+}
+
+/*****************************/
+/*      Side Navigation      */
+/*****************************/
+
+/* Navigation Menu - Background */
+.navigation {
+  /* critical sizing and position styles */
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+  
+  /* non-critical appearance styles */
+  list-style: none;
+  background: #111;
+}
+
+/* Navigation Menu - List items */
+.nav-item {
+    /* non-critical appearance styles */
+    width: 200px;
+    border-top: 1px solid #111;
+    border-bottom: 1px solid #000;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 100;
+}
+
+.nav-item a {
+  /* non-critical appearance styles */
+  display: block;
+  padding: 1em;
+  background: linear-gradient(135deg, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
+  color: white;
+  font-size: 1.2em;
+  text-decoration: none;
+  transition: color 0.2s, background 0.5s;
+}
+
+.nav-item a:hover {
+  color: #c74438;
+  background: linear-gradient(135deg, rgba(0,0,0,0) 0%,rgba(75,20,20,0.65) 100%);
+}
+
+/* Site Wrapper - Everything that isn't navigation */
+.site-wrap {
+  /* Critical position and size styles */
+  min-height: 100%;
+  min-width: 100%;
+  background-color: white; /* Needs a background or else the nav will show through */
+  position: relative;
+  top: 0;
+  bottom: 100%;
+  left: 0;
+  z-index: 1;
+  
+  /* non-critical apperance styles */
+  padding: 0;
+  background-image: url(/img/bg.jpg);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/* Nav Trigger */
+.nav-trigger {
+  /* critical styles - hide the checkbox input */
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+}
+
+label[for="nav-trigger"] {
+    /* critical positioning styles */
+    position: fixed;
+    left: 15px; top: 15px;
+    z-index: 2;
+
+    /* non-critical apperance styles */
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' x='0px' y='0px' width='30px' height='30px' viewBox='0 0 30 30' enable-background='new 0 0 30 30' xml:space='preserve'><rect width='30' height='4'/><rect y='24' width='30' height='4'/><rect y='12' width='30' height='4'/></svg>");
+    
+    background-size: contain;
+}
+
+/* Make the Magic Happen */
+.nav-trigger + label, .site-wrap {
+  transition: left 0.2s;
+}
+
+.nav-trigger:checked + label {
+  left: 215px;
+}
+
+.nav-trigger:checked ~ .site-wrap {
+  left: 200px;
+  box-shadow: 0 0 5px 5px rgba(0,0,0,0.5);
+}
+
+code {
+    padding: 2px;
+    background: #ddd;
+}
+
+/****************************/
+/*           Font           */
+/****************************/
+
+
+/*        Header Font        */
+
+h1 {
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    text-transform: uppercase;
+    font-size: 5em;
+    padding: 0 auto;
+    margin: 0 auto;
+    color: white;
+    
+}
+
+h1 span {
+    color: #ff4081;
+}
+
+h2 {
+    font-weight: 300;
+}
+
+/****************************/
+/*          Header          */
+/****************************/
+
+.header {
+    background: white;
+    overflow: hidden;
+    height: auto;
+    padding: 2em 0;
+    margin: 0;
+}
+
+.site-title {
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    font-size: 2em;
+    color: #ff4081;
+    text-align: center;
+    margin: 0 0 0.5em 0;
+}
+
+/*****************************/
+/*         Main Menu         */
+/*****************************/
+
+.nav {
+	text-align: center;
+	alignment: center;
+	align-content: center;
+	vertical-align: middle;
+    font-family: 'Open Sans', sans-serif;
+    color: #cfd8dc;
+    padding: 0;
+    margin: 0;
+}
+
+.nav ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	alignment: center;
+}
+
+.nav li {
+	display: inline;
+}
+
+.nav li:before {
+content: " | ";
+}
+
+.nav li:first-child:before {
+content: none;
+}
+
+.hero {
+    padding: 0;
+    margin: 0;
+}
+
+.hero-content {
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    color: white;
+    margin: 10em 0;
+    text-align: center;
+}
+
+/****************************/
+/*          Search          */
+/****************************/
+
+.search-bar {
+    display: table;
+    width: 100%;
+    height: 4em;
+    background: white;
+    padding: 1em 1em;
+}
+
+.search-form {
+    display: table-cell;
+    vertical-align: middle;
+    align-content: center;
+    text-align: center;
+}
+
+.search-form input[type="search"] {
+    background-color: #eeeeee;
+    color: #546e7a;
+    width: 30em;
+    height: 2.1em;
+    border: 1px solid #cccccc;
+    padding: 1em;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.2em;
+    margin: 0px -3px 0px 0px;
+    vertical-align: bottom;/*add vertical align bottom*/
+}
+
+.search-form input[type="submit"] {
+    background-color: #eeeeee;
+    color: #546e7a;
+    /*min-width: 6em;
+    min-height: 3em;*/
+    padding: 0.3em 0.8em;
+    border: 1px solid #cccccc;
+    font-size: 12;
+    margin: 0px 0px 0px 7px;
+    border-radius: 0px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 100;
+    font-size: 1.2em;
+    line-height:normal !important;
+    vertical-align: bottom;
+}
+
+.search-form input[type=submit]:hover {
+    background-color: lightgrey;
+}
+
+.view {
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    font-size: 1.5em;
+    color: white;
+    text-align: center;
+    padding: 0.5em;
+}
