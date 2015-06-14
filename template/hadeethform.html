@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Add Hadeeth Form</title>
+	<link rel="stylesheet" href="/css/form.css">
+</head>
+<body>
+	<div class="wrapper">
+		<form action="#" method="get" accept-charset="utf-8">
+			<fieldset>
+				<legend>Hadeeth</legend>
+				<label><span>Matan: </span>
+					<textarea name="matan"></textarea>
+				</label>
+				<br/>
+				<label><span>Language: </span>
+					<input list="matan-language" />
+						<datalist id="matan-language">
+						 	<option value="Arabic"/>
+						 	<option value="Malay"/>
+						 	<option value="English"/>
+						</datalist>
+				</label>
+			</fieldset>
+			<fieldset>
+				<legend>Source</legend>
+				<label for="book"><span>Book</span>
+					<input type="text" name="Book" value="" placeholder="">
+				</label>
+				<br/>
+				<label for="book-author"><span>Book Author</span>
+					<input type="text" name="book-author" value="" placeholder="">
+				</label>
+				<br/>
+				<label for="pubinfo"><span>Publishing Information</span>
+					<input type="text" name="pubinfo" value="" placeholder="Publisher, Year Printed">
+				</label>
+				<br/>
+				<label for="hadeeth-no"><span>Hadeeth No</span>
+					<input type="text" name="hadeeth-no" value="" placeholder="">
+				</label>
+				<br/>
+				<label for="narrator"><span>Narrator</span>
+					<input type="text" name="narrator" value="" placeholder="">
+				</label>
+				<br/>
+			</fieldset>
+			<fieldset>
+				<legend>Authenticity</legend>
+				<label><span>Hadeeth Status: </span>
+					<input list="status" />
+						<datalist id="status">
+						 	<option value="Sahih"/>
+						 	<option value="Hasan"/>
+						 	<option value="Dhaif"/>
+						 	<option value="Maudhu"/>
+						</datalist>
+				</label>
+				<br/>
+				<label for="scholar"><span>Scholar (Ulama)</span>
+					<input type="text" name="Scholar" value="" placeholder="">
+				</label>
+			</fieldset>
+		</form>
+	</wrapper>
+</body>
+</html>
